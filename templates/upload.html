@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.btn {
+  margin-left:40%;
+  margin-top:20%;
+  background-color:#454cad;
+  margin-right:40%;
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+  background:#454cad;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+</style>
+</head>
+<body style="background-color:#f8f8f8">
+
+
+
+<a href={{url_for("static",filename="temp/")}}{{f}} download rel="noopener noreferrer" target="_blank">
+  <button class="btn"><i class="fa fa-download"></i> Download</button>
+</a>
+
+
+
+
+
+</body>
+</html>

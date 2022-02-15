@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - File Upload &amp; Image Preview</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="../static/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h2>Upload File</h2>
+<p class="lead"></b></p>
+
+<!-- Upload  -->
+<form id="file-upload-form" class="uploader" action="/upload_file" method="post" enctype="multipart/form-data">
+  <input id="file-upload" type="file" name="fileUpload" />
+
+  <label for="file-upload" id="file-drag">
+    <img id="file-image" src="#" alt="Preview" class="hidden">
+    <div id="start">
+      <i class="fa fa-download" aria-hidden="true"></i>
+      <div>Select a file</div>
+      <div id="notimage" class="hidden">Please select correct file</div>
+    </div>
+    <div id="response" class="hidden">
+      <div id="messages"></div>
+      <progress class="progress" id="file-progress" value="0">
+        <span>0</span>%
+      </progress>
+    </div>
+  </label>
+
+  <input type="submit" id="file-upload-btn" class="btn btn-primary" value="Upload">
+</form>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="../static/script.js"></script>
+
+</body>
+</html>
