@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request , session, redirect
-from script import upated_file
+#from script import updated_file
+#import script 
+from script import updated_file
 from werkzeug.utils import secure_filename
 import os
 
@@ -33,10 +35,10 @@ def upload_file():
 	if request.method == "POST":
 		file = request.files['fileUpload']
 		filename = secure_filename(file.filename)
-		filename_ =  "edited" + filename
+		filename_ =  "edited_" + filename
 		session['filename'] = filename_
 		file.save(os.path.join(basdir, str(filename)))
-		upated_file(filename)
+		updated_file(filename)
 
 	return render_template("upload.html", f=session['filename'])
 
