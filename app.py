@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request , session, redirect
-#from script import updated_file
-#import script 
-from script import updated_file
+from script import upated_file
 from werkzeug.utils import secure_filename
 import os
 
@@ -22,8 +20,9 @@ def index():
 				print("file name===================")
 				print(session['filename'])
 				if filename == session['filename']:
-					print("yes---------------------------")
+					print("yes---------------------------")					
 					os.remove(os.path.join(Upload_dir,session['filename']))
+					print("removed_________________________________")
 					session['filename'] = ""
 	except Exception as e:
 		print(e)
@@ -35,10 +34,10 @@ def upload_file():
 	if request.method == "POST":
 		file = request.files['fileUpload']
 		filename = secure_filename(file.filename)
-		filename_ =  "edited_" + filename
+		filename_ =  "edited" + filename
 		session['filename'] = filename_
 		file.save(os.path.join(basdir, str(filename)))
-		updated_file(filename)
+		upated_file(filename)
 
 	return render_template("upload.html", f=session['filename'])
 
